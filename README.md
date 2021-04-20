@@ -14,6 +14,6 @@ Hash table -haashim
 
 Arrays - Prajwal
 
-Trees: suzuki subramanyam alias peter alias pakodi
+Trees: venkat
 
 }
