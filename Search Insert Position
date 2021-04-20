@@ -1,0 +1,22 @@
+problem link:
+
+https://leetcode.com/problems/search-insert-position/
+
+
+solution(sridhar):
+import math
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        if target>nums[len(nums)-1]:
+            return len(nums)
+        low=0
+        high=len(nums)-1
+        while low<high:
+            mid=math.floor((low+high)/2)
+            if nums[mid]==target:
+                return mid
+            if nums[mid]<target:
+                low=mid+1
+            if nums[mid]>target:
+                high=mid
+        return low
