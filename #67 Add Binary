@@ -1,0 +1,8 @@
+Leetcode link:
+https://leetcode.com/problems/add-binary/
+
+Solution(Somu):
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        Sum = bin(int(a,2)+int(b,2))
+        return Sum[2:]
