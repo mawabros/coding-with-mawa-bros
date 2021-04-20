@@ -1,0 +1,19 @@
+Leetcode link:
+https://leetcode.com/problems/reverse-integer/
+
+solution(somu):
+class Solution {
+public:
+    int reverse(int x) {
+        int rev_val=0;
+        while(x!=0)
+        {
+            int y = x%10;
+            x = x/10;
+            if (rev_val > INT_MAX/10 || (rev_val == INT_MAX / 10 && y > 7)) return 0;
+            if (rev_val < INT_MIN/10 || (rev_val == INT_MIN / 10 && y < -8)) return 0;
+            rev_val=rev_val*10+y;
+        }
+        return rev_val;
+    }
+};
