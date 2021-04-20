@@ -12,4 +12,6 @@ Math: Somu
 
 Hash table -haashim
 
+Arrays - Prajwal
+
 }
