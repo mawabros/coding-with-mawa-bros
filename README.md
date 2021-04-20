@@ -2,9 +2,9 @@
 coding and algorithms
 20-april-2021: {
 
-binary search-sridhar
+binary search:sridhar
 
-divide and conquer-raj kiran
+divide and conquer:raj kiran
 
 Backtracking: Anu Kiran
 
