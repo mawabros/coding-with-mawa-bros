@@ -1,0 +1,30 @@
+Problem link:
+
+https://leetcode.com/problems/binary-watch/
+
+Solution(AK):
+
+class Solution(object):
+    def readBinaryWatch(self, turnedOn):
+        """
+        :type turnedOn: int
+        :rtype: List[str]
+        """
+        li = []
+        def cnt(x):
+            r = 0
+            for i in str(bin(x)[2:]):
+                if i=='1':
+                    r += 1
+            return r   
+        c = 0
+        for h in range(12):
+            for m in range(60):
+                if cnt(h)+cnt(m)==turnedOn:
+                    res =str("") 
+                    res += str(h)+":"
+                    if m<10:
+                        res += "0"
+                    res += str(m)
+                    li.append(res)
+        return li
