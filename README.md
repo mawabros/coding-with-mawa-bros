@@ -4,7 +4,7 @@ coding and algorithms
 
 binary search:sridhar
 
-divide and conquer:raj kiran
+divide and conquer:Raj Kiran
 
 Backtracking: Anu Kiran
 
