@@ -1,0 +1,53 @@
+problem link:
+
+https://leetcode.com/problems/median-of-two-sorted-arrays/
+
+solution(sridhar):
+class Solution {
+public:
+double findMedianSortedArrays(vector<int>& arr1, vector<int>& arr2) {
+  int x=arr1.size();
+ int y=arr2.size();
+  if (x > y)
+  {
+    return findMedianSortedArrays(arr2,arr1);
+  }
+  int low = 0;
+  int high = x;
+  while(low <= high)
+  {
+    int partX = (low+high)/2;
+    int partY = (x+y+1)/2 - partX;
+
+    int maxLeftX = (partX == 0) ? INT_MIN : arr1[partX-1];
+    int minRightX = (partX == x) ? INT_MAX : arr1[partX];
+
+    int maxLeftY = (partY == 0) ? INT_MIN : arr2[partY-1];
+    int minRightY = (partY == y) ? INT_MAX : arr2[partY];
+
+    
+    if ((maxLeftX <= minRightY) && (maxLeftY <= minRightX))
+    {
+      if ((x + y) % 2 == 0) // if combined size is even
+      {
+        return ((max(maxLeftX, maxLeftY)) + min(minRightX, minRightY))/2.0;
+      }
+      else // if combined size is odd
+      {
+        return max(maxLeftX, maxLeftY);
+      }
+    }
+    else if (maxLeftX > minRightY)
+    {
+      high = partX - 1;
+    }
+    else
+    {
+      low = partX + 1;
+    }
+  }
+         return -1;
+    }
+   
+    
+};
