@@ -1,0 +1,19 @@
+Leetcode link:
+https://leetcode.com/problems/multiply-strings/
+
+Solution(Somu):
+class Solution:
+    def multiply(self, num1: str, num2: str) -> str:
+        num1=num1[::-1]
+        sum1=0
+        div1=1
+        for i in range(len(num1)):
+            sum1=sum1+int(num1[i])*div1
+            div1=div1*10
+        num2=num2[::-1]
+        sum2=0
+        div2=1
+        for i in range(len(num2)):
+            sum2=sum2+int(num2[i])*div2
+            div2=div2*10
+        return str(sum1*sum2)
