@@ -1,0 +1,16 @@
+https://practice.geeksforgeeks.org/problems/modular-node/1/?category[]=Linked%20List&category[]=Linked%20List&difficulty[]=-1&page=1&query=category[]Linked%20Listdifficulty[]-1page1category[]Linked%20List#
+
+solution:
+
+	struct Node *temp=head;
+	int t=-1,c=1;
+	while(temp!=NULL)
+	{
+	    if(c%k==0)
+	    {
+	        t=temp->data;
+	    }
+	    temp=temp->next;
+	    c++;
+	}
+	return t;
