@@ -1,0 +1,23 @@
+https://leetcode.com/problems/validate-binary-search-tree/
+
+class Solution {
+public:
+    long prev = -2147483649;
+    bool ans = true; 
+    void inorder(TreeNode* root) {
+        if(root == NULL)
+            return ; 
+        inorder(root -> left);
+        if( root -> val <= prev ){
+            ans = false; 
+        } else {
+            prev = root -> val;
+        }
+        inorder(root->right);
+    }
+    
+    bool isValidBST(TreeNode* root) {
+        inorder(root);
+        return ans;
+    }
+};
