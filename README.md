@@ -16,4 +16,6 @@ Arrays - Prajwal
 
 Trees: venkat
 
+Linked list: Tarun
+
 }
