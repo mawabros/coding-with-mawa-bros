@@ -1,0 +1,23 @@
+
+https://practice.geeksforgeeks.org/problems/implement-stack-using-linked-list/1/?category[]=Linked%20List&category[]=Linked%20List&difficulty[]=-1&page=1&query=category[]Linked%20Listdifficulty[]-1page1category[]Linked%20List
+
+
+
+
+solution:
+
+void MyStack ::push(int x) {
+    StackNode* temp=new StackNode(x);
+    temp->next=top;
+    top=temp;
+}
+
+
+int MyStack ::pop() {
+    if(top==NULL) return -1;
+    StackNode* temp=top;
+    top=top->next;
+    int data=temp->data;
+    free(temp);
+    return data;
+}
