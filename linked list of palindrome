@@ -1,0 +1,19 @@
+Problem link:
+https://practice.geeksforgeeks.org/problems/linked-list-of-strings-forms-a-palindrome/1/?category[]=Linked%20List&category[]=Linked%20List&difficulty[]=0&page=1&query=category[]Linked%20Listdifficulty[]0page1category[]Linked%20List#
+
+
+
+solution:-
+
+{
+   struct Node *temp=root;
+   string str1,str2;
+   while(temp!=NULL)
+   {
+       str1+=temp->data;
+       temp=temp->next;
+   }
+   str2=str1;
+   reverse(str2.begin(),str2.end());
+   return str1==str2;
+}
