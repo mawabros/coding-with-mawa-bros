@@ -1,0 +1,22 @@
+
+https://practice.geeksforgeeks.org/problems/count-pairs-whose-sum-is-equal-to-x/1/?category[]=Linked%20List&category[]=Linked%20List&difficulty[]=0&page=1&query=category[]Linked%20Listdifficulty[]0page1category[]Linked%20List#
+
+
+
+solution:
+
+int countPairs(struct Node* head1, struct Node* head2, int x) {
+        int count = 0;
+        unordered_set<int> s;
+        while(head1){
+        s.insert(head1->data);
+        head1 = head1->next;
+    }
+    while(head2){
+        if(s.find(x-head2->data)!=s.end())
+        count++;
+        head2 = head2->next;
+}
+    return count;
+}
+};
