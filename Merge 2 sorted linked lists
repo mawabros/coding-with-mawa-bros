@@ -1,0 +1,41 @@
+Problem link:-
+            https://practice.geeksforgeeks.org/problems/merge-two-sorted-linked-lists/1/?category[]=Linked%20List&category[]=Linked%20List&difficulty[]=1&page=1&query=category[]Linked%20Listdifficulty[]1page1category[]Linked%20List#
+
+
+
+Solution:-
+
+struct Node *a=head1,*b=head2,*c=NULL,*head=NULL;
+        if(a->data<b->data)
+        {
+            c=head=a;
+            a=a->next;
+        }
+        else
+        {
+            c=head=b;
+            b=b->next;
+        }
+        while(a!=NULL && b!=NULL)
+        {
+            if(a->data<b->data)
+            {
+                c->next=a;
+                a=a->next;
+            }
+            else
+            {
+                c->next=b;
+                b=b->next;
+            }
+            c=c->next;
+        }
+        if(a==NULL)
+        {
+            c->next=b;
+        }
+        else if(b==NULL)
+        {
+            c->next=a;
+        }
+        return head;
