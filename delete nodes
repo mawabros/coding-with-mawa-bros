@@ -1,0 +1,17 @@
+Problem link:-
+            https://practice.geeksforgeeks.org/problems/delete-nodes-having-greater-value-on-right/1/?category[]=Linked%20List&category[]=Linked%20List&difficulty[]=1&page=1&query=category[]Linked%20Listdifficulty[]1page1category[]Linked%20List#
+
+
+
+Solution:-
+
+if(head->next==NULL)
+        {
+            return head;
+        }
+        head->next=compute(head->next);
+        if((head->data)<(head->next->data))
+        {
+            return head->next;
+        }
+        return head;
