@@ -1,0 +1,19 @@
+Problem link:-
+            https://leetcode.com/problems/linked-list-components/submissions/
+
+
+Solution:-
+
+unordered_set<int> s;
+        for(auto num: G) s.insert(num);
+        int count=0;
+        while(head != nullptr){
+            if(s.find(head->val)!=s.end() && (head->next == nullptr || s.find(head->next->val)==s.end())){
+                count++;
+            }
+            head=head->next;
+        }
+        return count;
+    }
+
+
